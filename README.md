@@ -1,6 +1,6 @@
 # 🚀 Serensia Technical Test
 
-### Angular 20 • Signals • Modern Control Flow • Jest • CI/CD
+### Angular 21 • Signals • Modern Control Flow • Jest • CI/CD
 
 A clean and modern Angular implementation of:
 
@@ -13,13 +13,13 @@ Built using the latest Angular standards and best practices.
 
 ## 🌍 Live Demo
 
-👉 https://<your-username>.github.io/serensia-test/
+👉 https://khaledbouguerra.github.io/serensia-test/
 
 ---
 
 # 🧠 Tech Stack
 
-- Angular 20+
+- Angular 21
 - Standalone Components
 - Angular Signals
 - New Control Flow Syntax (`@if`, `@for`)
@@ -52,7 +52,6 @@ They are located in:
 - [`index.html`](./public/TestHtml/index.html)
 - [`child1.html`](./public/TestHtml/child1.html)
 - [`child2.html`](./public/TestHtml/child2.html)
-- [`abs.html`](./public/TestHtml/abs.html)
 
 ---
 
@@ -63,7 +62,6 @@ When deployed, these files are accessible at:
 - https://khaledbouguerra.github.io/serensia-test/TestHtml/index.html
 - https://khaledbouguerra.github.io/serensia-test/TestHtml/child1.html
 - https://khaledbouguerra.github.io/serensia-test/TestHtml/child2.html
-- https://khaledbouguerra.github.io/serensia-test/TestHtml/abs.html
 
 These pages are used as deterministic crawling targets to verify:
 
@@ -89,17 +87,18 @@ This approach guarantees consistent crawler behavior across local development, C
 
 # 🏗 Architecture
 
+````text
 src/
 ├── core/
-│ ├── http/
-│ ├── utils/
-│ │ ├── url.ts
-│ │ └── dom.ts
-│ └── testing/
-│
+│   ├── http/
+│   ├── utils/
+│   │   ├── url.ts
+│   │   └── dom.ts
+│   └── testing/
 └── features/
-├── term-suggest/
-└── email-crawler/
+    ├── term-suggest/
+    └── email-crawler/
+
 
 ### Architectural Principles
 
@@ -127,4 +126,4 @@ npm test
 npm run test:cov
 npm run build
 
-```
+````
