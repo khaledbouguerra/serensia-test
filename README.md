@@ -1,5 +1,7 @@
 # 🚀 Serensia Technical Test
 
+![CI Status](https://github.com/khaledbouguerra/serensia-test/actions/workflows/ci-pages.yml/badge.svg)
+
 ### Angular 21 • Signals • Modern Control Flow • Jest • CI/CD
 
 A clean and modern Angular implementation of:
@@ -29,6 +31,10 @@ Every push to `main` triggers a complete validation + deployment flow.
 
 ## 🟢 Pipeline Status
 
+![Lint](https://github.com/khaledbouguerra/serensia-test/actions/workflows/lint.yml/badge.svg)
+![Typecheck](https://github.com/khaledbouguerra/serensia-test/actions/workflows/typecheck.yml/badge.svg)
+![Tests](https://github.com/khaledbouguerra/serensia-test/actions/workflows/test.yml/badge.svg)
+![Deploy](https://github.com/khaledbouguerra/serensia-test/actions/workflows/deploy.yml/badge.svg)
 ![CI Status](https://github.com/khaledbouguerra/serensia-test/actions/workflows/ci-pages.yml/badge.svg)
 
 ➡ View workflow runs:  
