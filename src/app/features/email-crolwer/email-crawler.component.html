@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="header">
+    <div>
+      <h3>Email Crawler</h3>
+    </div>
+
+    <button class="btn" type="button" (click)="run()" [disabled]="loading()">
+      {{ loading() ? 'Running…' : 'Run' }}
+    </button>
+  </div>
+
+  <div class="grid">
+    <label class="field">
+      <span>URL de départ</span>
+      <input type="text" [value]="url()" (input)="url.set($any($event.target).value)" />
+    </label>
+
+    <label class="field">
+      <span>Profondeur maximale</span>
+      <input
+        type="number"
+        [value]="depth()"
+        (input)="setDepthFromInput($any($event.target).value)"
+      />
+      <small class="hint">
+        0 = uniquement la page de départ, 1 = + liens directs, -1 = illimité
+      </small>
+    </label>
+  </div>
+
+  @if (error(); as err) {
+    <div class="error">{{ err }}</div>
+  }
+
+  <div class="result">
+    <div class="result-header">
+      <strong>E-mails</strong>
+      <span class="pill">{{ emails().length }}</span>
+    </div>
+
+    @if (emails().length) {
+      <ul class="list">
+        @for (e of emails(); track e) {
+          <li>{{ e }}</li>
+        }
+      </ul>
+    } @else {
+      <div class="empty">Aucun e-mail trouvé.</div>
+    }
+  </div>
+
+  @if (visited().length) {
+    <details class="visited">
+      <summary>URLs visitées ({{ visited().length }})</summary>
+      <ul class="list small">
+        @for (v of visited(); track v) {
+          <li>{{ v }}</li>
+        }
+      </ul>
+    </details>
+  }
+</div>

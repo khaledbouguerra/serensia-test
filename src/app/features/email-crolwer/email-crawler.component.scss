@@ -1,0 +1,174 @@
+.card {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+
+  h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .muted {
+    margin: 6px 0 0;
+    color: #666;
+    font-size: 13px;
+  }
+}
+
+/* ✅ FIXED GRID */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+  gap: 12px;
+  margin-top: 14px;
+
+  /* IMPORTANT: do NOT align to end, it breaks when one field has a hint line */
+  align-items: start;
+}
+
+/* Prevent overflow in grid items */
+.grid .field {
+  min-width: 0;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+
+  span {
+    font-size: 13px;
+    color: #444;
+  }
+
+  input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+    outline: none;
+
+    &:focus {
+      border-color: #b8b8b8;
+    }
+  }
+
+  /* ✅ Keep a stable layout when hint exists */
+  .hint {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+}
+
+/* ✅ Responsive */
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn {
+  border: 1px solid #d8d8d8;
+  background: #f7f7f7;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+
+  &:hover {
+    background: #f0f0f0;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid #f0c0c0;
+  background: #fff5f5;
+  border-radius: 10px;
+  color: #7a1f1f;
+  font-size: 13px;
+}
+
+.result {
+  margin-top: 14px;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+
+  .result-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+    min-width: 22px;
+    padding: 0 8px;
+    border-radius: 999px;
+    background: #f2f2f2;
+    font-size: 12px;
+    color: #333;
+  }
+
+  .list {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 6px;
+
+    li {
+      padding: 8px 10px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      background: #fafafa;
+      font-family:
+        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+      font-size: 13px;
+    }
+
+    &.small li {
+      font-size: 12px;
+    }
+  }
+
+  .empty {
+    margin-top: 10px;
+    color: #777;
+    font-size: 13px;
+    padding: 10px;
+    border: 1px dashed #ddd;
+    border-radius: 10px;
+  }
+}
+
+.visited {
+  margin-top: 12px;
+
+  summary {
+    cursor: pointer;
+    color: #444;
+    font-size: 13px;
+  }
+}

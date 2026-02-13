@@ -1,0 +1,70 @@
+<div class="card">
+  <div class="header">
+    <div>
+      <h3>Term Suggest</h3>
+      <p class="muted">
+        Suggestions triées par: score (remplacements), puis proximité longueur, puis ordre
+        alphabétique.
+      </p>
+    </div>
+
+    <div class="actions">
+      <button class="btn" type="button" (click)="fillExample()">Example</button>
+      <button class="btn ghost" type="button" (click)="clear()">Clear</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <label class="field">
+      <span>Terme recherché</span>
+      <input
+        type="text"
+        [value]="search()"
+        (input)="search.set($any($event.target).value)"
+        placeholder="e.g. gros"
+      />
+    </label>
+
+    <label class="field">
+      <span>Limit</span>
+      <input
+        type="number"
+        min="0"
+        [value]="limit()"
+        (input)="setLimitFromInput($any($event.target).value)"
+      />
+    </label>
+  </div>
+
+  <label class="field">
+    <span>Termes (un par ligne)</span>
+    <textarea
+      rows="6"
+      [value]="termsRaw()"
+      (input)="termsRaw.set($any($event.target).value)"
+      placeholder="one term per line"
+    ></textarea>
+  </label>
+
+  <div class="result">
+    <div class="result-header">
+      <strong>Results</strong>
+      <span class="pill">{{ results().length }}</span>
+    </div>
+
+    @if (results().length) {
+      <ul class="list">
+        @for (t of results(); track t; let i = $index) {
+          <li>
+            <span class="idx">{{ i + 1 }}</span>
+            <span class="term">{{ t }}</span>
+          </li>
+        }
+      </ul>
+    } @else {
+      <div class="empty">
+        Aucun résultat (vérifiez que les termes ne sont pas plus courts que le terme recherché).
+      </div>
+    }
+  </div>
+</div>
