@@ -3,7 +3,3 @@ export interface TermSuggestion {
   score: number; // nb de remplacements min
   lengthDelta: number; // |term.length - search.length|
 }
-export interface Node {
-  url: string;
-  depth: number;
-}
