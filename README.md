@@ -17,6 +17,53 @@ Built using the latest Angular standards and best practices.
 
 ---
 
+---
+
+# 🔄 CI / CD Pipeline
+
+This project includes a fully automated GitHub Actions pipeline.
+
+Every push to `main` triggers a complete validation + deployment flow.
+
+---
+
+## 🟢 Pipeline Status
+
+![CI Status](https://github.com/khaledbouguerra/serensia-test/actions/workflows/ci-pages.yml/badge.svg)
+
+➡ View workflow runs:  
+https://github.com/khaledbouguerra/serensia-test/actions/workflows/ci-pages.yml
+
+---
+
+## ⚙️ Pipeline Jobs
+
+The workflow consists of the following jobs:
+
+| Job Name      | Purpose                           | Blocking                  |
+| ------------- | --------------------------------- | ------------------------- |
+| **lint**      | Runs ESLint (angular-eslint)      | ✅ Yes                    |
+| **typecheck** | TypeScript strict type validation | ✅ Yes                    |
+| **test**      | Jest unit tests + coverage        | ✅ Yes                    |
+| **build**     | Production Angular build          | ✅ Yes                    |
+| **deploy**    | Deploy to GitHub Pages            | 🚀 Only if all above pass |
+
+---
+
+## 🔁 Execution Flow
+
+Push
+↓
+Lint
+↓
+Typecheck
+↓
+Tests
+↓
+Build
+↓
+Deploy
+
 # 🧠 Tech Stack
 
 - Angular 21
