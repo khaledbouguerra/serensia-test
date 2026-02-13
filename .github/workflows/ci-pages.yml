@@ -66,23 +66,22 @@ jobs:
     needs: [test]
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-
       - run: npm ci
 
       - run: npm run build -- --base-href "/serensia-test/"
 
-      # ---- Adjust this path if your build output differs ----
-      # Common Angular outputs:
-      # - dist/<appName>/browser
-      # - dist/<appName>
+      - run: |
+          echo "---- dist tree ----"
+          ls -la dist
+          find dist -maxdepth 3 -type f -name "index.html" -print
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: dist/serensia-test/browser
 
   deploy:
     if: github.event_name == 'push'
