@@ -13,7 +13,7 @@ import { inject } from '@angular/core';
 export class EmailCrawlerComponent {
   private readonly svc = inject(EmailCrawlerService);
 
-  url = signal('http://localhost:4200/TestHtml/index.html');
+  url = signal('https://khaledbouguerra.github.io/serensia-test/TestHtml/index.html');
   depth = signal<number>(1);
   loading = signal(false);
   error = signal<string | null>(null);
