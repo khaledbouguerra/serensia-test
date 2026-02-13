@@ -87,7 +87,7 @@ This approach guarantees consistent crawler behavior across local development, C
 
 # 🏗 Architecture
 
-````text
+```text
 src/
 ├── core/
 │   ├── http/
@@ -99,6 +99,8 @@ src/
     ├── term-suggest/
     └── email-crawler/
 
+
+```
 
 ### Architectural Principles
 
@@ -126,4 +128,4 @@ npm test
 npm run test:cov
 npm run build
 
-````
+```
