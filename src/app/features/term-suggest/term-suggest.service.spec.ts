@@ -14,7 +14,6 @@ describe('TermSuggestService', () => {
   });
 
   it('computes min replacements against any substring (no insertions)', () => {
-    // "agressif" contains "gres" which is 1 replacement away from "gros" (o->e)
     expect(service.score('agressif', 'gros')).toBe(1);
 
     // exact match => 0

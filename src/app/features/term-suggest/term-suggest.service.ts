@@ -25,7 +25,6 @@ export class TermSuggestService {
   }
 
   /**
-   * Sort order (as per PDF):
    * 1) score asc
    * 2) length closeness to search => abs(len diff) asc
    * 3) alphabetical asc
